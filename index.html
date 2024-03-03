@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <!--cr icon
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        -->
+        <title>Portfolio</title>
+        <!--Font used-->
+        <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Madimi+One&display=swap" rel="stylesheet">
+        <style>
+            .madimi-one-regular {
+                font-family: "Madimi One", sans-serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+            .kode-mono {
+                font-family: "Kode Mono", monospace;
+                font-optical-sizing: auto;
+                font-weight: 600;
+                font-style: normal;
+            }
+            .nav {
+                background-color: #6EAEF8;
+                text-align: center;
+                font-size: 18px;
+            }
+            .nav a {
+                color: white;
+            }
+            .masthead {
+                padding: 15rem 0;
+                background: url(images/backgroundstars.png);
+            }
+            .btn {
+                display: inline-block;
+                font-weight: 400;
+                line-height: 1.0;
+                color: #212529;
+                text-align: center;
+                text-decoration: none;
+                vertical-align: middle;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+                background-color: transparent;
+                border: 1px solid transparent;
+                padding: 1.25rem 1.25rem;
+                font-size: 1rem;
+                border-radius: 0.25rem;
+                transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            }
+            .btn-primary {
+                color: #fff;
+                background-color: #64a19d;
+                border-color: #64a19d;
+            }
+            .row {
+                margin: 0 25px 35px 25px;
+            }
+            .mypad {
+                padding-left: 250px;
+                margin-top: 30px;
+            }
+            .card-image {
+                width: 100%;
+                height: 150px;
+                position: relative;
+                overflow: hidden;
+            }
+            .card-image > img {
+                width: 100%;
+                max-width: inherit;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%) scale(1.0);
+                -moz-transform: translate(-50%, -50%) scale(1.0);
+                -o-transform: translate(-50%, -50%) scale(1.0);
+                transform: translate(-50%, -50%) scale(1.0);
+            }
+            .card-text {
+                text-overflow: ellipsis;
+                overflow: hidden;
+                /*white-space: nowrap;*/
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+                display: -webkit-box;
+            }
+            .ccard {
+                margin: 40px auto 15px auto;
+                width: 95%;
+                max-width: 1200px;
+            }
+            .project {
+                text-align: center;
+            }
+            footer {
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+            .frmcontact {
+                text-align: center;
+                background-color: aliceblue;
+            }
+            .mypost {
+                padding: 20px;
+                border-radius: 4px;
+                box-shadow: 0px 0px 3px 0px gray;
+                width: 95%;
+                max-width: 500px;
+                position: relative;
+                margin: 40px auto 0px auto;
+            }
+            .mycomment {
+                color: grey;
+            }
+            input[type=text] {
+                width: 60%;
+                padding: 12px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                text-align: center;
+                box-sizing: border-box;
+            }
+            .buttonsc {
+                margin: 10px auto 10px auto;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+            .colorbtn {
+                color: white;
+                background-color: #6179b9;
+                font-size: 16px;
+                padding: 8px 20px;
+                margin: 4px 2px;
+                text-decoration: none;
+            }
+            .colorbtn:hover {
+                background-color: #485d97;
+            }
+        </style>
+    </head>
+    <body>
+        <!--<nav class="nav navbar fixed-top navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="nav-link" href="#"><img src="images/user.png" width="auto" height="20px" alt="user""></a>
+                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#">Portfolio</a>
+                <a class="nav-link" href="#">Contact</a>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>            
+        </nav>-->
+        <nav class="nav fixed-top justify-content-center">
+            <!--<a class="nav-link" href="#"><img src="images/user.png" width="auto" height="30px" alt="user"></a>-->
+            <a class="nav-link madimi-one-regular" href="#home">Portfolio</a>
+            <a class="nav-link" href="#home">Home</a>
+            <a class="nav-link" href="#aboutme">About</a>
+            <a class="nav-link" href="#myproject">Project</a>
+            <a class="nav-link" href="#contact">Contact</a>
+        </nav>
+        <header class="masthead" id="home">
+            <div class="d-flex justify-content-center">
+                <div class="text-center">
+                    <h1 class="mx-auto my-0 text-uppercase font-inter kode-mono">Alifia Salwa Salsabila</h1>
+                        <h5 class="text-black-50 mx-auto mt-2 mb-5 font-inter">
+                            A11.2021.13245 / 7671960
+                            <br>UDINUS / MSIB LearningX Batch 6
+                        </h5>
+                    <a class="btn btn-primary font-prompt text-uppercase" href="#aboutme">Get Started</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="row featurette mypad" id="aboutme">
+            <div class="col-md-7 order-md-2">
+                <br>
+                <h3 style="margin-top: 15px;">About Me:</h3>
+                Merupakan mahasiswa Teknik Informartika tahun ketiga yang
+                memiliki minat tinggi untuk menambah pengalaman pada bidang
+                Web Development, Mobile Development, dan Data Mining.
+                <hr>
+            </div>
+            <div class="col-md-3 order-md-1">
+                <img class="featurette-image mx-auto" src="images/self.jpg" alt="About" height="300px" style="max-width: 100%; height: auto;">
+            </div>            
+        </div>
+
+        <div class="ccard" id="myproject">
+            <h3 class="project">Projects:</h3>
+            <div class="row row-cols-1 row-cols-md-4 g-3">
+                <div class="col">
+                    <div class="card h-100">
+                        <a href="https://github.com/alsawoof/relling.github.io"><div class="card-image">
+                            <img src="images/portopweb.png" class="card-img-top" alt="portoWebDevSmt1">
+                        </div></a>
+                        <div class="card-body">
+                            <h5 class="card-title">Web Development</h5>
+                            <p class="card-text">Relling merupakan contoh desain frontend website review buku untuk penilaian
+                                tugas UAS Pemrograman Web.</p>
+                            <p class="mycomment">Semester 1; HTML, CSS</p>    
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <a href="https://github.com/alsawoof/PPB-mobile/tree/main/TugasMenuMakanan"><div class="card-image">
+                            <img src="images/portoppb.png" class="card-img-top" alt="portofolioAndroidJava">
+                        </div></a>
+                        <div class="card-body">
+                            <h5 class="card-title">Android Development</h5>
+                            <p class="card-text">Aplikasi menu makanan berbasis android yang dikerjakan sebagai tugas UAS
+                                Pemrograman Perangkat Bergerak.</p>
+                            <p class="mycomment">Semester 3; Java</p>    
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <a href="https://github.com/alsawoof/DataMining/blob/main/TugasAkhirMakul/TA.ipynb"><div class="card-image">
+                            <img src="images/portodatmin.png" class="card-img-top" alt="portoDataMining">
+                        </div></a>
+                        <div class="card-body">
+                            <h5 class="card-title">Prediksi dengan kNN</h5>
+                            <p class="card-text">Melakukan prediksi gangguan tidur berdasarkan dataset yang ada menggunakan 
+                                algoritma kNN.</p>
+                            <p class="mycomment">Semester 4; Python</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <a href="https://github.com/alsawoof/Kriptografi/tree/main/StreamCipher"><div class="card-image">
+                            <img src="images/portokripto.png" class="card-img-top" alt="portoKriptografi">
+                        </div></a>
+                        <div class="card-body">
+                            <h5 class="card-title">Kriptografi Cipher</h5>
+                            <p class="card-text">Mengubah plaintext ke ciphertext dan sebaliknya menggunakan metode Stream Cipher.</p>
+                            <p class="mycomment">Semester 5; Python</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mypost frmcontact" id="contact">
+            <h3>Contact Me:</h3>
+            <div class="form-floating mb-3">
+                <input type="url" class="form-control" id="floatingInput" placeholder="Enter Movie URL">
+                <label for="floatingInput">Name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="url" class="form-control" id="floatingInput" placeholder="Enter Movie URL">
+                <label for="floatingInput">Email Address</label>
+            </div>
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a messages here" id="floatingTextarea2" style="height: 100px"></textarea>
+                <label for="floatingTextarea2">Messages</label>
+            </div>
+            <div class="buttonsc">
+                <button type="submit" class="colorbtn">Save</button>
+            </div>
+        </div>
+        
+        <footer style="text-align: center">
+            <a href="https://discordapp.com/users/sealsky27"><img src="images/discord.svg" width="25px" height="25px"></a>
+            <a href="mailto:als.salsa27@gmail.com"><img src="images/envelope-solid.svg" width="25px" height="25px"></a>
+            <a href="https://github.com/alsawoof/"><img src="images/github.svg" width="25px" height="25px"></a>
+            <br>
+            Copyright &copy; Alifia Salwa Salsabila
+        </footer>
+
+
+        
+    </body>
+</html>
